@@ -3,7 +3,31 @@
 Final Year Project developed in Unreal Engine 5.6.1 exploring perception-driven enemy AI for stealth and survival-horror gameplay.
 
 ## Overview
+## Screenshots
 
+### Test Environment
+
+![AI Chaser test environment](07-test-environment.png)
+
+Custom maze and apartment-style environment used to test navigation, detection, chasing and investigation behaviour.
+
+### AI Perception
+
+![AI Perception debug view](02-ai-perception-debug.png)
+
+AI Perception debug view showing the enemy's sight and hearing detection ranges.
+
+### Behaviour Tree
+
+![Enemy AI Behaviour Tree](01-behaviour-tree.png)
+
+Behaviour Tree controlling the priority between roaming, chasing and investigation behaviour.
+
+### Sound Detection Blueprint
+
+![Sound Handler Blueprint](05-sound-handler-blueprint.png)
+
+Blueprint logic used to process hearing stimuli, retrieve the sound location and update the Blackboard so the AI can investigate the source.
 This project demonstrates enemy AI capable of detecting and responding to the player through both sight and sound.
 
 The AI can:
