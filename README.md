@@ -3,6 +3,20 @@
 Final Year Project developed in Unreal Engine 5.6.1 exploring perception-driven enemy AI for stealth and survival-horror gameplay.
 
 ## Overview
+
+This project demonstrates enemy AI capable of detecting and responding to the player through both sight and sound.
+
+The AI can:
+
+- Patrol and roam through the environment
+- Detect the player using line of sight
+- Detect player footsteps and landing sounds
+- Chase the player when visually detected
+- Investigate the player's last known location
+- Return to roaming after losing the player
+- React differently while the player is crouching
+- Operate as a hearing-only enemy variant
+
 ## Screenshots
 
 ### Test Environment
@@ -28,18 +42,6 @@ Behaviour Tree controlling the priority between roaming, chasing and investigati
 ![Sound Handler Blueprint](05-sound-handler-blueprint.png)
 
 Blueprint logic used to process hearing stimuli, retrieve the sound location and update the Blackboard so the AI can investigate the source.
-This project demonstrates enemy AI capable of detecting and responding to the player through both sight and sound.
-
-The AI can:
-
-- Patrol and roam through the environment
-- Detect the player using line of sight
-- Detect player footsteps and landing sounds
-- Chase the player when visually detected
-- Investigate the player's last known location
-- Return to roaming after losing the player
-- React differently while the player is crouching
-- Operate as a hearing-only enemy variant
 
 ## AI Architecture
 
@@ -59,18 +61,16 @@ The main AI system uses:
 
 The general behaviour flow is:
 
-Patrol / Roam  
-↓  
-Player detected  
-↓  
-Sight → Chase Player  
-Sound → Investigate Location  
-↓  
-Player Lost  
-↓  
-Investigate Last Known Location  
-↓  
-Return to Roaming
+```mermaid
+flowchart TD
+    A[Patrol / Roam] --> B{Player detected?}
+    B -- Sight --> C[Chase player]
+    B -- Sound --> D[Investigate sound location]
+    C --> E[Player lost]
+    D --> E
+    E --> F[Investigate last known location]
+    F --> A
+```
 
 ## Features
 
