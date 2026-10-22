@@ -1,6 +1,7 @@
 # AI Chaser Sandbox
 
 Final Year Project developed in Unreal Engine 5.6.1 exploring perception-driven enemy AI for stealth and survival-horror gameplay.
+Demo Video: https://youtu.be/qvxNUVmT6xA
 
 ## Overview
 
